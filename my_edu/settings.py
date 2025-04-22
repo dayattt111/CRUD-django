@@ -79,10 +79,22 @@ WSGI_APPLICATION = 'my_edu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',  # Adjust the path if necessary
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'crud',  # Nama database PostgreSQL
+        'USER': 'postgres',      # Username untuk PostgreSQL
+        'PASSWORD': 'dayat123',   # Password untuk PostgreSQL
+        'HOST': 'localhost',      # Atau alamat IP jika menggunakan hosting
+        'PORT': '5432',           # Port default PostgreSQL
     }
 }
 
