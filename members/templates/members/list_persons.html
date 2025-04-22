@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD</title>
+    <link rel="stylesheet" href="{% static 'css/gaya.css' %}">
+</head>
+<body>
+    
+    <h2 id="list-persons">Person List</h2>
+    <a class="btn" href="{% url 'add_person' %}">Add New Person</a>
+    <div id="list-persons" class="cons">
+        <ul>
+            {% for person in persons %}
+                <li>
+                    <div class="person-info">
+                        <strong>{{ person.name }}</strong> ({{ person.age }} years old)
+                    </div>
+                    <div class="person-actions">
+                        <a href="{% url 'update_person' person.pk %}">Edit</a>
+                        <a class="delete" href="{% url 'delete_person' person.pk %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    
+
+</body>
+</html>
